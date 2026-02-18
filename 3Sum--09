@@ -1,0 +1,17 @@
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        seen = set()
+        nums.sort()
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                for k in range(j +1, len(nums)):
+                    if nums[i] + nums[j] + nums[k] == 0:
+                        seen.add((nums[i], nums[j], nums[k]))
+                        
+        
+        output = []
+        for t in seen:
+            output.append(list(t))
+        return output
+        
+        
